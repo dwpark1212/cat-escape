@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    [SerializeField] private float maxSpeed = 0.1f;
     [SerializeField] private float attenuation = 0.96f;
     [SerializeField] private float divied = 500f;
     private float speed = 0;
