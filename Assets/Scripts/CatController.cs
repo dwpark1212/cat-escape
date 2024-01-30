@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CatController : MonoBehaviour
 {
-    [SerializeReference] private Rigidbody2D rbody;
+    [SerializeField] private Rigidbody2D rbody;
     [SerializeField] private float force = 680f;
     // Update is called once per frame
     void Update()
