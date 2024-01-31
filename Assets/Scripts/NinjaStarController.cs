@@ -5,29 +5,23 @@ using UnityEngine.UIElements;
 
 public class NinjaStarController : MonoBehaviour
 {
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float length;
     [SerializeField] private Vector3 StartPoint;
     [SerializeField] private float NinjaStarSpeed;
     void Update()
     {
-        // 화면을 터치했을때 표창이 회전한다.
-        if(Input.GetMouseButton(0))
-        {
-            this.transform.Rotate(0,0,speed);
-        }
-        // 화면을 터치한 지점 나타내기.
-        if(Input.GetMouseButtonDown(0))
+        // 화면을 터치했을때의 지점 나타내기
+        if (Input.GetMouseButtonDown(0))
         {
             Debug.Log(Input.mousePosition);
             StartPoint = Input.mousePosition;
-        }
+        }           
         // 화면에서 손을뗀 지점 및 y축의 거리 차이 나타내기
         if(Input.GetMouseButtonUp(0))
         {
             Debug.Log(Input.mousePosition);
-            float length = Input.mousePosition.y - StartPoint.y;
-            Debug.Log(length);
-            NinjaStarSpeed = length / 500f;
+            // y축의 거리차이를 이용하여 스피드를 구한다(여기서 값이 크기때문에 임의의 숫자로 나누어준다)
+            length = ((Input.mousePosition.y - StartPoint.y) / 500f);
             this.transform.Translate(Vector3.up * Time.deltaTime, 0);
         }
     }
