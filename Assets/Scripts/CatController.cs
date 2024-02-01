@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;  // 클리어씬사용하려면 추가해줘야함
+using UnityEngine.SceneManagement;  // scene 변경하기위해서 추가해줘야한다.
 
 public class CatController : MonoBehaviour
 {
@@ -70,6 +70,8 @@ public class CatController : MonoBehaviour
         Vector3 localposition = new Vector3(Mathf.Clamp(transform.position.x, -2.6f, 2.4f), transform.position.y, transform.position.z);
         transform.position = localposition;
 
+        
+
     }
     //Trigger모드일경우 충돌 판정을 해주는 이벤트 함수
     int collisioncount;
@@ -80,16 +82,17 @@ public class CatController : MonoBehaviour
         {
             Debug.LogFormat("OnTriggerEnter2D: {0}", collision);
             collisioncount++;
+            
         }
-        
+
         //장면 전환
         SceneManager.LoadScene("ClimbCloudClear");
-        
-            
-        //터치했을때 장면전환
-        if(Input.GetMouseButtonDown(0))
-        {
 
+
+        //터치했을때 장면전환
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene(0);
         }
     }
     
