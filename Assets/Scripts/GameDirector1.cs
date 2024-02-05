@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameDirector1 : MonoBehaviour
 {
-    private Text Scoretext;
 
-    // Update is called once per frame
+    [SerializeField]
+    private Text scoreText;
+
+    public int score;
+
+    private void Start()
+    {
+        Debug.LogFormat("scoreText: {0}", scoreText);
+    }
+
     void Update()
     {
-        //Scoretext.text = 
+        scoreText.text = score.ToString();
     }
 }

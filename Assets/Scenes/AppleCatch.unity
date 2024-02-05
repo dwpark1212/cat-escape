@@ -617,6 +617,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f365f6d7bc0794fb05c19e236f84a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 858915967}
+  score: 0
 --- !u!1 &114838406779385636
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appleSfx: {fileID: 8300000, guid: 7119a71d68ed638449e65e920acb6270, type: 3}
   bombSfx: {fileID: 8300000, guid: 8180fe248176c2a4696b5ba6736b94e1, type: 3}
+  gameDirector1: {fileID: 1947843210}
 --- !u!54 &4112940777985404338
 Rigidbody:
   m_ObjectHideFlags: 0

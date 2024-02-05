@@ -6,6 +6,7 @@ public class BasketController : MonoBehaviour
 {
     [SerializeField] private AudioClip appleSfx;
     [SerializeField] private AudioClip bombSfx;
+    [SerializeField] private GameDirector1 gameDirector1;
     private AudioSource audioSource;
 
     private void Start()
@@ -45,11 +46,13 @@ public class BasketController : MonoBehaviour
         {
             Debug.Log("µÊ¡°");
             this.audioSource.PlayOneShot(this.appleSfx);
+            gameDirector1.score += 100;
         }
         else if(other.gameObject.tag == "Bomb")
         {
             Debug.Log("∞®¡°");
             this.audioSource.PlayOneShot(this.bombSfx);
+            gameDirector1.score /= 2;
         }
         Destroy(other.gameObject);
     }
